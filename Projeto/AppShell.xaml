@@ -7,20 +7,24 @@
     FlyoutBehavior="Flyout"
     Title="Projeto"
 >
-    <!-- FlyoutItem Template -->
+    <!-- FlyoutItem and MenuItem Template -->
     <Shell.ItemTemplate>
         <DataTemplate>
-            <HorizontalStackLayout Spacing="10" Padding="15, 5, 15, 5"  BackgroundColor="Transparent">
-                <Image 
-                Source="{Binding Icon}" 
-                WidthRequest="20" 
-                HeightRequest="20" 
-            />
-
+            <HorizontalStackLayout Spacing="10" Padding="15, 5, 15, 20"  BackgroundColor="Transparent">
+                <Image Source="{Binding Icon}" WidthRequest="20" HeightRequest="20" />
                 <Label Text="{Binding Title}" FontSize="16" />
             </HorizontalStackLayout>
         </DataTemplate>
     </Shell.ItemTemplate>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <HorizontalStackLayout Spacing="10" Padding="15, 5, 15, 20" BackgroundColor="Transparent">
+                <Image Source="{Binding Icon}" WidthRequest="20" HeightRequest="20" />
+                <Label Text="{Binding Text}" FontSize="16" />
+            </HorizontalStackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
     
     <!-- //////////////////////// -->
 
@@ -36,6 +40,8 @@
     <FlyoutItem Title="Ínicio" Icon="house.svg">
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="home" />
     </FlyoutItem>
+
+    <MenuItem Text="Aparência" IconImageSource="palette.svg" Clicked="OnAppearencePageClicked" />
 
     <Shell.FlyoutFooter>
         <Label Text="Desenvolvido por: Gabriel Ribeiro" HorizontalTextAlignment="Center" Margin="0,0,0,5" />
