@@ -3,39 +3,97 @@
     x:Class="Projeto.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:Projeto"
     FlyoutBehavior="Flyout"
+    FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource SurfaceDark}}"
     Title="Projeto"
 >
-    <!-- FlyoutItem Template -->
+    <!-- FlyoutItem and MenuItem Template -->
     <Shell.ItemTemplate>
         <DataTemplate>
-            <HorizontalStackLayout Spacing="10" Padding="15, 5, 15, 5"  BackgroundColor="Transparent">
-                <Image 
-                Source="{Binding Icon}" 
-                WidthRequest="20" 
-                HeightRequest="20" 
-            />
+            <Border Margin="8,2" Padding="14,12" StrokeThickness="0"
+                StrokeShape="RoundRectangle 10" BackgroundColor="Transparent">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter 
+                                        Property="BackgroundColor"
+                                        Value="{AppThemeBinding Light={StaticResource AccentContainerLight}, 
+                                                                Dark={StaticResource AccentContainerDark}}" 
+                                    />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
 
-                <Label Text="{Binding Title}" FontSize="16" />
-            </HorizontalStackLayout>
+                <Grid ColumnDefinitions="22,*" ColumnSpacing="14">
+                    <Image 
+                        Source="{Binding FlyoutIcon}" 
+                        HeightRequest="20" 
+                        WidthRequest="20"
+                        VerticalOptions="Center"
+                    />
+
+                    <Label Grid.Column="1" Text="{Binding Title}" FontSize="15"
+                       VerticalOptions="Center"
+                       TextColor="{AppThemeBinding Light={StaticResource TextPrimaryLight}, Dark={StaticResource TextPrimaryDark}}" 
+                    />
+                </Grid>
+            </Border>
         </DataTemplate>
     </Shell.ItemTemplate>
-    
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Border Margin="8,2" Padding="14,12" StrokeThickness="0"
+                StrokeShape="RoundRectangle 10" BackgroundColor="Transparent">
+                <Grid ColumnDefinitions="22,*" ColumnSpacing="14">
+ 
+                    <Image HeightRequest="20" WidthRequest="20" VerticalOptions="Center">
+                        <Image.Triggers>
+                            <DataTrigger TargetType="Image" Binding="{Binding Text}" Value="Aparência">
+                                <Setter Property="Source"
+                                    Value="{AppThemeBinding Light=palette_light.png, Dark=palette_dark.png}" 
+                                />
+                            </DataTrigger>
+                        </Image.Triggers>
+                    </Image>
+
+                    <Label Grid.Column="1" Text="{Binding Text}" FontSize="15"
+                       VerticalOptions="Center"
+                       TextColor="{AppThemeBinding Light={StaticResource TextPrimaryLight}, Dark={StaticResource TextPrimaryDark}}" 
+                    />
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
     <!-- //////////////////////// -->
 
     <Shell.FlyoutHeader>
         <HorizontalStackLayout 
-            Padding="15, 20, 15, 35"
+            Padding="15"
+            Margin="0, 0, 0, 15"
             BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}"
         >
             <Label Text="Menu" FontSize="18" FontAttributes="Bold" />
         </HorizontalStackLayout>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Ínicio" Icon="house.svg">
+    <FlyoutItem Title="Ínicio" FlyoutIcon="{AppThemeBinding Light=house_light.png, Dark=house_dark.png}">
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="home" />
     </FlyoutItem>
+
+    <MenuItem Text="Aparência" Clicked="OnAppearencePageClicked" />
 
     <Shell.FlyoutFooter>
         <Label Text="Desenvolvido por: Gabriel Ribeiro" HorizontalTextAlignment="Center" Margin="0,0,0,5" />
