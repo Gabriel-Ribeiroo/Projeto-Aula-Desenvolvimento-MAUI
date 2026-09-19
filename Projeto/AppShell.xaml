@@ -100,12 +100,25 @@
         </HorizontalStackLayout>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Ínicio" FlyoutIcon="{AppThemeBinding Light=house_light.png, Dark=house_dark.png}">
-        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="home" />
-    </FlyoutItem>
+    <FlyoutItem 
+        Title="Navigation" 
+        FlyoutDisplayOptions="AsMultipleItems"
+    >
+        <Tab 
+            Title="Ínicio" 
+            Icon="{AppThemeBinding Light=house_light.png, Dark=house_dark.png}"
+            FlyoutIcon="{AppThemeBinding Light=house_light.png, Dark=house_dark.png}"
+        >
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="home" />
+        </Tab>
 
-    <FlyoutItem Title="Veículos" FlyoutIcon="{AppThemeBinding Light=car_light.png, Dark=car_dark.png}">
-        <ShellContent ContentTemplate="{DataTemplate local:VehiclesPage}" Route="vehicles" />
+        <Tab 
+            Title="Veículos" 
+            Icon="{AppThemeBinding Light=car_light.png, Dark=car_dark.png}"
+            FlyoutIcon="{AppThemeBinding Light=car_light.png, Dark=car_dark.png}"
+        >
+            <ShellContent ContentTemplate="{DataTemplate local:VehiclesPage}" Route="vehicles" />
+        </Tab>
     </FlyoutItem>
 
     <MenuItem Text="Aparência" Clicked="OnAppearencePageClicked" />
