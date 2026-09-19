@@ -25,13 +25,6 @@
     <Color x:Key="Gray900">#16191C</Color>
     <Color x:Key="Gray950">#0F1113</Color>
 
-    <!-- =========================================================
-         CAMADAS DE SUPERFICIE
-         Canvas  = fundo da pagina
-         Surface = cartoes, flyout
-         Elevated= navbar, sheets
-         High    = hover, selecionado
-         ========================================================= -->
     <Color x:Key="CanvasLight">#F7F8F8</Color>
     <Color x:Key="CanvasDark">#0F1113</Color>
 
@@ -49,9 +42,6 @@
     <Color x:Key="OutlineStrongLight">#CBD1D3</Color>
     <Color x:Key="OutlineStrongDark">#3B434A</Color>
 
-    <!-- =========================================================
-         TEXTO
-         ========================================================= -->
     <Color x:Key="TextPrimaryLight">#101314</Color>
     <Color x:Key="TextPrimaryDark">#E8ECEF</Color>
     <Color x:Key="TextSecondaryLight">#4F585E</Color>
@@ -59,17 +49,11 @@
     <Color x:Key="TextMutedLight">#7B858B</Color>
     <Color x:Key="TextMutedDark">#6B757E</Color>
 
-    <!-- =========================================================
-         ACCENT CONTAINER
-         ========================================================= -->
     <Color x:Key="AccentContainerLight">#DDF5EC</Color>
     <Color x:Key="AccentContainerDark">#1E2E2A</Color>
     <Color x:Key="OnAccentContainerLight">#044635</Color>
     <Color x:Key="OnAccentContainerDark">#A6EFD6</Color>
 
-    <!-- =========================================================
-         STATUS
-         ========================================================= -->
     <Color x:Key="SuccessLight">#3D7A24</Color>
     <Color x:Key="SuccessDark">#8EDC72</Color>
     <Color x:Key="WarningLight">#9A6B00</Color>
@@ -77,10 +61,26 @@
     <Color x:Key="DangerLight">#C03B3B</Color>
     <Color x:Key="DangerDark">#FF7B7B</Color>
 
-    <!-- =========================================================
-         BRUSHES SEMANTICOS
-         Uma chave so, ja resolve os dois temas.
-         ========================================================= -->
+    <Color x:Key="DangerContainerLight">#FBE9E9</Color>
+    <Color x:Key="DangerContainerDark">#2E1C1C</Color>
+    <Color x:Key="OnDangerContainerLight">#8F2A2A</Color>
+    <Color x:Key="OnDangerContainerDark">#FF9E9E</Color>
+
+    <SolidColorBrush 
+        x:Key="DangerContainerBrush"
+        Color="{AppThemeBinding Light={StaticResource DangerContainerLight}, Dark={StaticResource DangerContainerDark}}" 
+    />
+    
+    <SolidColorBrush 
+        x:Key="OnDangerContainerBrush"
+        Color="{AppThemeBinding Light={StaticResource OnDangerContainerLight}, Dark={StaticResource OnDangerContainerDark}}" 
+    />
+    
+    <SolidColorBrush 
+        x:Key="OnAccentContainerBrush"
+        Color="{AppThemeBinding Light={StaticResource OnAccentContainerLight}, Dark={StaticResource OnAccentContainerDark}}" 
+    />
+
     <SolidColorBrush x:Key="CanvasBrush"
         Color="{AppThemeBinding Light={StaticResource CanvasLight}, Dark={StaticResource CanvasDark}}" />
     <SolidColorBrush x:Key="SurfaceBrush"
@@ -96,9 +96,6 @@
     <SolidColorBrush x:Key="AccentContainerBrush"
         Color="{AppThemeBinding Light={StaticResource AccentContainerLight}, Dark={StaticResource AccentContainerDark}}" />
 
-    <!-- =========================================================
-         COMPATIBILIDADE com o template padrao
-         ========================================================= -->
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>

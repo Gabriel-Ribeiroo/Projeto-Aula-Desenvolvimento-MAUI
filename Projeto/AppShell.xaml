@@ -3,7 +3,6 @@
     x:Class="Projeto.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:Projeto"
     FlyoutBehavior="Flyout"
     FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource SurfaceDark}}"
@@ -12,8 +11,14 @@
     <!-- FlyoutItem and MenuItem Template -->
     <Shell.ItemTemplate>
         <DataTemplate>
-            <Border Margin="8,2" Padding="14,12" StrokeThickness="0"
-                StrokeShape="RoundRectangle 10" BackgroundColor="Transparent">
+            <Border 
+                Margin="8,2" 
+                Padding="14,12" 
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 10" 
+                BackgroundColor="Transparent"
+                InputTransparent="True"
+            >
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
@@ -54,8 +59,14 @@
 
     <Shell.MenuItemTemplate>
         <DataTemplate>
-            <Border Margin="8,2" Padding="14,12" StrokeThickness="0"
-                StrokeShape="RoundRectangle 10" BackgroundColor="Transparent">
+            <Border 
+                Margin="8,2" 
+                Padding="14,12" 
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 10" 
+                BackgroundColor="Transparent"
+                InputTransparent="True"
+            >
                 <Grid ColumnDefinitions="22,*" ColumnSpacing="14">
  
                     <Image HeightRequest="20" WidthRequest="20" VerticalOptions="Center">
@@ -91,6 +102,10 @@
 
     <FlyoutItem Title="Ínicio" FlyoutIcon="{AppThemeBinding Light=house_light.png, Dark=house_dark.png}">
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="home" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Veículos" FlyoutIcon="{AppThemeBinding Light=car_light.png, Dark=car_dark.png}">
+        <ShellContent ContentTemplate="{DataTemplate local:VehiclesPage}" Route="vehicles" />
     </FlyoutItem>
 
     <MenuItem Text="Aparência" Clicked="OnAppearencePageClicked" />

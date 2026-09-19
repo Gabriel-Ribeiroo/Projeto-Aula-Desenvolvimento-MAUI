@@ -64,22 +64,51 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Resources\Styles\NewFolder1\**" />
+	  <AndroidResource Remove="Resources\Styles\NewFolder\**" />
+	  <Compile Remove="Resources\Styles\NewFolder1\**" />
+	  <Compile Remove="Resources\Styles\NewFolder\**" />
+	  <EmbeddedResource Remove="Resources\Styles\NewFolder1\**" />
+	  <EmbeddedResource Remove="Resources\Styles\NewFolder\**" />
+	  <MauiCss Remove="Resources\Styles\NewFolder1\**" />
+	  <MauiCss Remove="Resources\Styles\NewFolder\**" />
+	  <MauiXaml Remove="Resources\Styles\NewFolder1\**" />
+	  <MauiXaml Remove="Resources\Styles\NewFolder\**" />
+	  <None Remove="Resources\Styles\NewFolder1\**" />
+	  <None Remove="Resources\Styles\NewFolder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Resources\Styles\Components.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
-		<PackageReference Include="CommunityToolkit.Maui" Version="15.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Properties\NewFolder\" />
 	  <Folder Include="Resources\AppIcon\" />
 	  <Folder Include="Resources\Splash\" />
+	  <Folder Include="Resources\Styles\Components\" />
+	  <Folder Include="Resources\Styles\Pages\" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="AppearencePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Card.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\PageHeader.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\Components\CardStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="VehiclesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
