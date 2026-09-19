@@ -70,9 +70,9 @@
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Grid.Column="0">
                     <Image 
                         Source="{AppThemeBinding Light=smartphone_light.png, Dark=smartphone_dark.png}" 
-                        WidthRequest="25"
-                        HeightRequest="25"
-                        VerticalOptions="Center"
+                         WidthRequest="25"
+                         HeightRequest="25"
+                         VerticalOptions="Center"
                         Grid.Column="0"
                     />
 

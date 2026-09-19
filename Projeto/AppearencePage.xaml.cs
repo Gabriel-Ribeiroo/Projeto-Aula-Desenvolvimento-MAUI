@@ -37,5 +37,5 @@ public partial class AppearencePage : ContentPage
 
 		Application.Current!.UserAppTheme = theme;
 		Preferences.Set("AppTheme", theme.ToString());       
-	}
+    }
 }
