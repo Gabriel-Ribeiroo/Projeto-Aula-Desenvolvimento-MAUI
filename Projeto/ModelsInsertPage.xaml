@@ -19,26 +19,29 @@
 
                 <Entry 
                     x:Name="EntName"
-                    Placeholder="Ex.: Gol 1.6 Trendline"
+                    Placeholder="Ex.: Nivus"
                     MaxLength="50"
                     ReturnType="Next" 
                 />
             </VerticalStackLayout>
 
-
             <VerticalStackLayout>
                 <Label Text="Descrição" FontSize="16" FontAttributes="Bold" />
 
                 <Editor 
-                    x:Name="DescriptionEditor"
-                    Placeholder="Observações sobre o veículo"
+                    x:Name="EdtDescription"
+                    Placeholder="Observações sobre o modelo"
                     AutoSize="TextChanges"
                     MinimumHeightRequest="100"
                     MaxLength="500" 
                 />
             </VerticalStackLayout>
 
-            <Button Text="Salvar" />
+            <Button 
+                x:Name="BtnSave" 
+                Clicked="OnSaveButtonClicked" 
+                Text="Salvar" 
+            />
         </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
