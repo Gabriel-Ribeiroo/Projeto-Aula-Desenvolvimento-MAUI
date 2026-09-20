@@ -6,4 +6,9 @@ public partial class ManufacturersPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private async void OnAddManufacturerClicked(object sender, EventArgs args)
+	{
+		await Shell.Current.GoToAsync(nameof(ManufacturersInsertPage));
+	}
 }

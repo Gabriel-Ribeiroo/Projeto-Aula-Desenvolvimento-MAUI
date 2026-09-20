@@ -109,6 +109,9 @@
 	  <MauiXaml Update="Components\PageHeader.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ManufacturersInsertPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ManufacturersPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
