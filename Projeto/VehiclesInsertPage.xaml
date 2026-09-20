@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:Projeto.Components"
+    Shell.NavBarIsVisible="False"
+    Shell.FlyoutBehavior="Disabled"
+    x:Class="Projeto.VehiclesInsertPage"
+>
+    <VerticalStackLayout>
+        <Grid RowDefinitions="Auto,*">
+            <components:PageHeader Grid.Row="0" Title="Novo Veículo" />
+        </Grid>
+
+        <VerticalStackLayout Margin="0, 20, 0, 20" Spacing="20" Padding="15, 0, 15, 0">
+            <VerticalStackLayout>
+                <Label Text="Nome" FontSize="16" FontAttributes="Bold" />
+                
+                <Entry 
+                    x:Name="EntName"
+                    Placeholder="Ex.: Gol 1.6 Trendline"
+                    MaxLength="50"
+                    ReturnType="Next" 
+                />
+            </VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                <VerticalStackLayout Grid.Column="0" Spacing="4">
+                    <Label Text="Ano fabricação" FontSize="13" />
+                    <Picker x:Name="ManufactureYearPicker"
+                        Title="Selecione"
+                        SelectedIndexChanged="OnManufactureYearChanged" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1" Spacing="4">
+                    <Label Text="Ano modelo" FontSize="13" />
+                    
+                    <Picker 
+                        x:Name="ModelYearPicker"
+                        Title="Selecione" 
+                    />
+                </VerticalStackLayout>
+            </Grid>
+
+            <VerticalStackLayout Spacing="4">
+                <Label Text="Descrição" FontSize="13" />
+                <Editor x:Name="DescriptionEditor"
+                    Placeholder="Observações sobre o veículo"
+                    AutoSize="TextChanges"
+                    MinimumHeightRequest="100"
+                    MaxLength="500" />
+            </VerticalStackLayout>
+
+            <Button Text="Salvar" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+    
+</ContentPage>

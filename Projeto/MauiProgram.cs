@@ -24,6 +24,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<ModelsRepository>();
         builder.Services.AddSingleton<VehiclesPage>();
 
+        builder.Services.AddTransient<VehiclesInsertPage>();
+
 #if DEBUG
         builder.Logging.AddDebug();
 #endif

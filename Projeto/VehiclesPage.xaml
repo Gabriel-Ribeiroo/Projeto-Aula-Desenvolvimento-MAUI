@@ -28,6 +28,7 @@
             Padding="16,15"
             CornerRadius="14" 
             BorderWidth="0"
+            Clicked="OnAddVehicleButtonClicked"
             Background="{StaticResource AccentBrush}"
             TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource PrimaryDarkText}}"
         />

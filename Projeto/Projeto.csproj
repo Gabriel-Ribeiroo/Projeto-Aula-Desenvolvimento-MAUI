@@ -112,6 +112,9 @@
 	  <MauiXaml Update="Resources\Styles\Components\CardStyle.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="VehiclesInsertPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="VehiclesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
