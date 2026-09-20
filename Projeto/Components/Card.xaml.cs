@@ -9,6 +9,9 @@ public partial class Card : ContentView
         BindableProperty.Create(nameof(Subtitle), typeof(string), typeof(Card), string.Empty,
                                 propertyChanged: OnSubtitleChanged);
 
+    public event EventHandler? EditClicked;
+    public event EventHandler? DeleteClicked;
+
     public string Title
     {
         get => (string)GetValue(TitleProperty);
@@ -22,6 +25,12 @@ public partial class Card : ContentView
     }
 
     public bool HasSubtitle => !string.IsNullOrWhiteSpace(Subtitle);
+
+    void OnEditTapped(object? sender, TappedEventArgs e)
+        => EditClicked?.Invoke(this, EventArgs.Empty);
+
+    void OnDeleteTapped(object? sender, TappedEventArgs e)
+        => DeleteClicked?.Invoke(this, EventArgs.Empty);
 
     static void OnSubtitleChanged(BindableObject bindable, object oldValue, object newValue)
         => ((Card)bindable).OnPropertyChanged(nameof(HasSubtitle));

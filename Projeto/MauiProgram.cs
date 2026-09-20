@@ -26,6 +26,7 @@ public static class MauiProgram
 
         builder.Services.AddTransient<VehiclesInsertPage>();
         builder.Services.AddTransient<ModelsInsertPage>();
+        builder.Services.AddTransient<ManufacturersPage>(); 
         builder.Services.AddTransient<ManufacturersInsertPage>();
 
 #if DEBUG

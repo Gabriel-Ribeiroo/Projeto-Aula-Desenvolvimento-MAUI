@@ -30,15 +30,19 @@
                 <Label Text="Descrição" FontSize="16" FontAttributes="Bold" />
 
                 <Editor 
-                    x:Name="DescriptionEditor"
+                    x:Name="EdtDescription"
                     Placeholder="Observações sobre a fabricante"
                     AutoSize="TextChanges"
                     MinimumHeightRequest="100"
-                    MaxLength="50§0" 
+                    MaxLength="500" 
                 />
             </VerticalStackLayout>
 
-            <Button Text="Salvar" />
+            <Button 
+                Text="Salvar" 
+                Clicked="OnSaveButtonClicked"
+                x:Name="BtnSave" 
+            />
         </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
