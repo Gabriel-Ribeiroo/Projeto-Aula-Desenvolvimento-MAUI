@@ -9,17 +9,31 @@
         <VerticalStackLayout Grid.Row="0" Padding="20,18,20,12" Spacing="2">
             <Label Text="Veículos" FontSize="28" FontAttributes="Bold"
                    TextColor="{AppThemeBinding Light={StaticResource TextPrimaryLight}, Dark={StaticResource TextPrimaryDark}}" />
-            <Label Text="3 cadastrados" FontSize="13"
+            <Label x:Name="LblCount" Text="" FontSize="13"
                    TextColor="{AppThemeBinding Light={StaticResource TextMutedLight}, Dark={StaticResource TextMutedDark}}" />
         </VerticalStackLayout>
 
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout Padding="20,0" Spacing="10">
-                <components:Card Title="Corolla XEi" Subtitle="Toyota · 2023 · RQP-2F18" />
-                <components:Card Title="Civic Touring" Subtitle="Honda · 2022 · FGT-8A02" />
-                <components:Card Title="Nivus Highline" Subtitle="Volkswagen · 2024 · LKM-5C77" />
-            </VerticalStackLayout>
-        </ScrollView>
+        <CollectionView Grid.Row="1" x:Name="VehiclesList" Margin="20,0">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <components:Card 
+                        Title="{Binding Name}" 
+                        Subtitle="{Binding Description}"
+                        EditClicked="OnEditClicked"
+                        DeleteClicked="OnDeleteButtonClicked"
+                    />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.EmptyView>
+                <Label Text="Nenhum veículo cadastrado." 
+       HorizontalOptions="Center" Margin="0,40" />
+            </CollectionView.EmptyView>
+        </CollectionView>
 
         <Button Grid.Row="2" Margin="20,12,20,20"
             Text="+  Novo veículo"

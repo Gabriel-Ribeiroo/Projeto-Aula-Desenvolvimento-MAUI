@@ -26,32 +26,61 @@
 
             <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
                 <VerticalStackLayout Grid.Column="0" Spacing="4">
-                    <Label Text="Ano fabricação" FontSize="13" />
-                    <Picker x:Name="ManufactureYearPicker"
+                    <Label Text="Ano fabricação" FontSize="16" FontAttributes="Bold" />
+                    
+                    <Picker 
+                        x:Name="PckManufacturerYear"
                         Title="Selecione"
-                        SelectedIndexChanged="OnManufactureYearChanged" />
+                        SelectedIndexChanged="OnManufactureYearChanged" 
+                    />
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Grid.Column="1" Spacing="4">
-                    <Label Text="Ano modelo" FontSize="13" />
+                    <Label Text="Ano modelo" FontSize="16" FontAttributes="Bold" />
                     
                     <Picker 
-                        x:Name="ModelYearPicker"
+                        x:Name="PckModelYear"
+                        Title="Selecione" 
+                    />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                <VerticalStackLayout Grid.Column="0" Spacing="4">
+                    <Label Text="Fabricante" FontSize="16" FontAttributes="Bold" />
+
+                    <Picker 
+                        x:Name="PckManufacturer"
+                        ItemDisplayBinding="{Binding Name}"
+                        Title="Selecione"
+                    />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1" Spacing="4">
+                    <Label Text="Modelo" FontSize="16" FontAttributes="Bold" />
+
+                    <Picker 
+                        ItemDisplayBinding="{Binding Name}"
+                        x:Name="PckModel"
                         Title="Selecione" 
                     />
                 </VerticalStackLayout>
             </Grid>
 
             <VerticalStackLayout Spacing="4">
-                <Label Text="Descrição" FontSize="13" />
-                <Editor x:Name="DescriptionEditor"
+                <Label Text="Descrição" FontSize="16" FontAttributes="Bold" />
+                <Editor x:Name="EdtDescription"
                     Placeholder="Observações sobre o veículo"
                     AutoSize="TextChanges"
                     MinimumHeightRequest="100"
                     MaxLength="500" />
             </VerticalStackLayout>
 
-            <Button Text="Salvar" />
+            <Button 
+                x:Name="BtnSave"
+                Text="Salvar" 
+                Clicked="OnSaveButtonClicked"
+            />
         </VerticalStackLayout>
     </VerticalStackLayout>
     

@@ -22,8 +22,9 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<ManufacturersRepository>();
         builder.Services.AddSingleton<ModelsRepository>();
-        builder.Services.AddSingleton<VehiclesPage>();
+        builder.Services.AddSingleton<VehiclesRepository>();
 
+        builder.Services.AddTransient<VehiclesPage>(); 
         builder.Services.AddTransient<VehiclesInsertPage>();
         builder.Services.AddTransient<ModelsPage>(); 
         builder.Services.AddTransient<ModelsInsertPage>();
