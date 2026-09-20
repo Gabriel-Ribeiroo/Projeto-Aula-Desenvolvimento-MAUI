@@ -96,6 +96,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Data\Data.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="AppearencePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

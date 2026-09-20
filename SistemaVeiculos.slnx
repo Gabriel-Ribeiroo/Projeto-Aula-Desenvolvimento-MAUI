@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="Projeto/Projeto.csproj" />
+  <Project Path="Data/Data.csproj" Id="77fd538a-a733-439f-a8e8-b819aeb8c78d" />
+  <Project Path="Projeto/Projeto.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
 </Solution>
