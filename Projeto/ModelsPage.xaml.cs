@@ -6,4 +6,9 @@ public partial class ModelsPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private async void OnAddModelClicked(object sender, EventArgs args)
+	{
+		await Shell.Current.GoToAsync(nameof(ModelsInsertPage));
+	}
 }

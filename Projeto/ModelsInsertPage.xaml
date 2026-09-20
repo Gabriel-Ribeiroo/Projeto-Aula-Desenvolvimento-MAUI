@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:Projeto.Components"
+    x:Class="Projeto.ModelsInsertPage"
+    Shell.NavBarIsVisible="False"
+    Shell.FlyoutBehavior="Disabled"
+    Title="ModelsInsertPage"
+>
+    <VerticalStackLayout>
+        <Grid RowDefinitions="Auto,*">
+            <components:PageHeader Grid.Row="0" Title="Novo Modelo" />
+        </Grid>
+
+        <VerticalStackLayout Margin="0, 20, 0, 20" Spacing="20" Padding="15, 0, 15, 0">
+            <VerticalStackLayout>
+                <Label Text="Nome" FontSize="16" FontAttributes="Bold" />
+
+                <Entry 
+                    x:Name="EntName"
+                    Placeholder="Ex.: Gol 1.6 Trendline"
+                    MaxLength="50"
+                    ReturnType="Next" 
+                />
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout>
+                <Label Text="Descrição" FontSize="16" FontAttributes="Bold" />
+
+                <Editor 
+                    x:Name="DescriptionEditor"
+                    Placeholder="Observações sobre o veículo"
+                    AutoSize="TextChanges"
+                    MinimumHeightRequest="100"
+                    MaxLength="500" 
+                />
+            </VerticalStackLayout>
+
+            <Button Text="Salvar" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
