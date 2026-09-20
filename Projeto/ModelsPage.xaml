@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:Projeto.Components"
+    x:Class="Projeto.ModelsPage"
+>
+    <Grid RowDefinitions="Auto,*,Auto">
+        <VerticalStackLayout Grid.Row="0" Padding="20,18,20,12" Spacing="2">
+            <Label Text="Modelos" FontSize="28" FontAttributes="Bold"
+            TextColor="{AppThemeBinding Light={StaticResource TextPrimaryLight}, Dark={StaticResource TextPrimaryDark}}" />
+            <Label Text="3 cadastrados" FontSize="13"
+            TextColor="{AppThemeBinding Light={StaticResource TextMutedLight}, Dark={StaticResource TextMutedDark}}" />
+        </VerticalStackLayout>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20,0" Spacing="10">
+                <components:Card Title="Gol"  />
+                <components:Card Title="Civic" />
+                <components:Card Title="Nivus" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button 
+            Grid.Row="2" 
+            Margin="20,12,20,20"
+            Text="+  Novo modelo"
+            FontSize="16" 
+            FontAttributes="Bold"
+            Padding="16,15"
+            CornerRadius="14" 
+            BorderWidth="0"
+            Background="{StaticResource AccentBrush}"
+            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource PrimaryDarkText}}"
+        />
+    </Grid>
+</ContentPage>

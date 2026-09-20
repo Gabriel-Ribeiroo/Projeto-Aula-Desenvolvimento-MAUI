@@ -109,6 +109,9 @@
 	  <MauiXaml Update="Components\PageHeader.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ModelsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\Components\CardStyle.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
