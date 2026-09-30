@@ -93,10 +93,12 @@
     <Shell.FlyoutHeader>
         <HorizontalStackLayout 
             Padding="15"
+            Spacing="10"
             Margin="0, 0, 0, 15"
             BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}"
         >
-            <Label Text="Menu" FontSize="18" FontAttributes="Bold" />
+            <Image HeightRequest="20" WidthRequest="20" Source="{AppThemeBinding Light=engine_light.png, Dark=engine_dark.png}" />
+            <Label Text="SysVeicular" FontSize="18" FontAttributes="Bold" />
         </HorizontalStackLayout>
     </Shell.FlyoutHeader>
 
