@@ -137,6 +137,14 @@
         >
             <ShellContent ContentTemplate="{DataTemplate local:ManufacturersPage}" Route="manufacturers" />
         </Tab>
+
+        <Tab
+            Title="Desenvolvedor"
+            Icon="{AppThemeBinding Light=user_light.png, Dark=user_dark.png}"
+            FlyoutIcon="{AppThemeBinding Light=user_light.png, Dark=user_dark.png}"
+        >
+            <ShellContent ContentTemplate="{DataTemplate local:DeveloperPage}" Route="developer" />
+        </Tab>
     </FlyoutItem>
 
     <MenuItem Text="Aparência" Clicked="OnAppearencePageClicked" />

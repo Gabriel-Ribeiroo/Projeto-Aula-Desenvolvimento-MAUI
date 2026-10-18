@@ -6,7 +6,7 @@
     <ScrollView>
         <Grid Padding="20">
             <Label 
-                Text="SysCar - This screen will be filled soon..." 
+                Text="Seja Bem vindo a SysVeicular!" 
                 SemanticProperties.HeadingLevel="Level1"
                 Style="{StaticResource Headline}"
                 HorizontalOptions="Center"

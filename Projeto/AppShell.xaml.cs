@@ -10,6 +10,7 @@
             Routing.RegisterRoute(nameof(VehiclesInsertPage), typeof(VehiclesInsertPage));
             Routing.RegisterRoute(nameof(ModelsInsertPage), typeof(ModelsInsertPage));
             Routing.RegisterRoute(nameof(ManufacturersInsertPage), typeof(ManufacturersInsertPage));
+            Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
         }
 
         private async void OnAppearencePageClicked(object sender, EventArgs args)
